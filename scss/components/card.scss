@@ -1,0 +1,119 @@
+@use "../utilities/" as *;
+
+.card-container {
+  display: grid;
+  margin: rem(40) auto;
+  gap: rem(30);
+  align-items: stretch;
+  @include breakpoint(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include breakpoint(xl) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  border: var(--border);
+  transition: all 200ms ease-in-out;
+  border-radius: 5px;
+  &:hover {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.card__image--wrapper {
+  position: relative;
+  display: grid;
+  place-content: center;
+  aspect-ratio: 90/66;
+  background-color: #ffffff;
+  background-image: url("../../assets/img/cover.webp");
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+  &:hover {
+    .card__image {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.card__image {
+  position: relative;
+  width: 90%;
+  margin-inline: auto;
+  transition: transform 200ms ease-in-out;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  padding: rem(20);
+  & > *:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}
+
+.card__title {
+  // text-align: center;
+  color: var(--clr-primary);
+  font-size: rem(25);
+}
+
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 600;
+  gap: rem(10);
+  text-transform: uppercase;
+  line-height: 1;
+  & > *:not(:last-child) {
+    padding-inline-end: rem(10);
+    border-inline-end: var(--border);
+  }
+}
+
+.html {
+  color: var(--clr-blue);
+}
+
+.css {
+  color: var(--clr-green);
+}
+
+.js {
+  color: var(--clr-oragne);
+}
+
+.bs {
+  color: var(--clr-purple);
+}
+
+.card__buttons {
+  display: flex;
+  gap: rem(15);
+}
+
+.card__button {
+  display: inline-block;
+  padding: rem(8) rem(25);
+  font-family: var(--font-title);
+  color: var(--clr-white);
+  border-radius: 3px;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 5px 5px 5px 0px rgba(239, 82, 101, 0.15);
+  }
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+.code {
+  background-color: var(--clr-primary);
+}
+
+.preview {
+  background-color: var(--clr-primary);
+}

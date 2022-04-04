@@ -1,0 +1,12 @@
+@use "../utilities/" as *;
+
+.footer {
+  text-align: center;
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  padding-block: rem(10);
+  font-size: rem(14);
+  a {
+    font-family: var(--font-title);
+  }
+}

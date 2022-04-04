@@ -1,0 +1,255 @@
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-black: hsl(0, 0%, 0%);
+  --clr-title: hsl(222, 47%, 11%);
+  --clr-body: hsl(215, 19%, 35%);
+  --clr-primary: rgb(239, 82, 101);
+  --clr-blue: hsl(217, 91%, 60%);
+  --clr-green: hsl(142, 71%, 45%);
+  --clr-oragne: hsl(38, 92%, 50%);
+  --clr-purple: hsl(271, 91%, 65%);
+  --border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+img,
+picture {
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --font-title: "Readex Pro", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--clr-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  color: var(--clr-title);
+}
+
+:root {
+  --max-width: 1200px;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: min(90%, var(--max-width));
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: var(--border);
+  text-align: center;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23ef5265' fill-opacity='0.1'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 10px;
+}
+
+.header__title {
+  display: inline-block;
+  color: var(--clr-primary);
+  font-size: 1.875rem;
+  font-weight: 700;
+  padding: 0.9375rem;
+  border-inline: var(--border);
+  background-color: var(--clr-white);
+}
+
+.card-container {
+  display: grid;
+  margin: 2.5rem auto;
+  gap: 1.875rem;
+  align-items: stretch;
+}
+@media (min-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1280px) {
+  .card-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  border: var(--border);
+  transition: all 200ms ease-in-out;
+  border-radius: 5px;
+}
+.card:hover {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card__image--wrapper {
+  position: relative;
+  display: grid;
+  place-content: center;
+  aspect-ratio: 90/66;
+  background-color: #ffffff;
+  background-image: url("../../assets/img/cover.webp");
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+}
+.card__image--wrapper:hover .card__image {
+  transform: scale(1.1);
+}
+
+.card__image {
+  position: relative;
+  width: 90%;
+  margin-inline: auto;
+  transition: transform 200ms ease-in-out;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+.card__content > *:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.card__title {
+  color: var(--clr-primary);
+  font-size: 1.5625rem;
+}
+
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 600;
+  gap: 0.625rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.card__tags > *:not(:last-child) {
+  padding-inline-end: 0.625rem;
+  border-inline-end: var(--border);
+}
+
+.html {
+  color: var(--clr-blue);
+}
+
+.css {
+  color: var(--clr-green);
+}
+
+.js {
+  color: var(--clr-oragne);
+}
+
+.bs {
+  color: var(--clr-purple);
+}
+
+.card__buttons {
+  display: flex;
+  gap: 0.9375rem;
+}
+
+.card__button {
+  display: inline-block;
+  padding: 0.5rem 1.5625rem;
+  font-family: var(--font-title);
+  color: var(--clr-white);
+  border-radius: 3px;
+  transition: all 200ms ease-in-out;
+}
+.card__button:hover {
+  transform: translateY(-4px);
+  box-shadow: 5px 5px 5px 0px rgba(239, 82, 101, 0.15);
+}
+.card__button:active {
+  transform: translateY(-2px);
+}
+
+.code {
+  background-color: var(--clr-primary);
+}
+
+.preview {
+  background-color: var(--clr-primary);
+}
+
+.footer {
+  text-align: center;
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  padding-block: 0.625rem;
+  font-size: 0.875rem;
+}
+.footer a {
+  font-family: var(--font-title);
+}
+
+/*# sourceMappingURL=style.css.map */
