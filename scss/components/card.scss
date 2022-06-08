@@ -89,6 +89,14 @@
   color: var(--clr-purple);
 }
 
+.react {
+  color: var(--clr-react);
+}
+
+.angular {
+  color: var(--clr-angular);
+}
+
 .card__buttons {
   display: flex;
   gap: rem(15);
